@@ -66,7 +66,14 @@
 }
 
 .current-day {
-  background-color: blue;
+  background-color: rgb(26, 115, 232);
+  border-radius: 100%;
+  padding: 10px;
+  color: white;
+}
+
+.current-day-text {
+  color: rgb(26, 115, 232);
 }
 
 .red-line {

@@ -1,5 +1,5 @@
 import React from "react";
-import { days, formatMins } from "../../utils/dateUtils.js";
+import { days } from "../../utils/dateUtils.js";
 
 const Navigation = ({ weekDates }) => {
   const currentDate = new Date();
@@ -13,15 +13,21 @@ const Navigation = ({ weekDates }) => {
           dayDate.getFullYear() === currentDate.getFullYear();
 
         return (
-          <div
-            className={`calendar__day-label day-label ${
-              isCurrentDay ? "current-day" : ""
-            }`}
-          >
-            <span className="day-label__day-name">
+          <div className={`calendar__day-label day-label`}>
+            <span
+              className={`day-label__day-name ${
+                isCurrentDay ? "current-day-text" : ""
+              }`}
+            >
               {days[dayDate.getDay()]}
             </span>
-            <span className="day-label__day-number">{dayDate.getDate()}</span>
+            <span
+              className={`day-label__day-number ${
+                isCurrentDay ? "current-day" : ""
+              }`}
+            >
+              {dayDate.getDate()}
+            </span>
           </div>
         );
       })}
